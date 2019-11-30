@@ -24,7 +24,10 @@ public class resultado extends AppCompatActivity {
     }
 
     public void salir(View view) {
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        MainActivity.salir = true;
+        startActivity(intent);
     }
 
     public void volver_jugar(View view) {
